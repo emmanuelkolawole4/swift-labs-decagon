@@ -143,8 +143,35 @@ func orderWeight(_ str: String) -> String {
 
 print(orderWeight("56 65 74 100 99 68 86 180 90"))
 
-
-
+//day 8
+func outLier(array: [Int]) -> Int {
+    var evenIdx = [Int]()
+    var oddIdx = [Int]()
+    var idx = 0
+    while idx < array.count {
+        if array[idx] % 2 == 0 {
+          evenIdx.append(idx)
+        } else {
+          oddIdx.append(idx)
+        }
+        idx += 1
+    }
+    //   for (idx, num) in arr.enumerated() {
+    //     if num % 2 == 0 {
+    //       evenIdx.append(idx)
+    //       break
+    //     } else {
+    //       oddIdx.append(idx)
+    //       break
+    //     }
+    //   }
+    if evenIdx.count == 1 {
+     return array[evenIdx[0]]
+    }
+    return array[oddIdx[0]]
+}
+print(outLier(array: [160,3,1719,1,9,13,-21]))
+print(outLier(array: [2,4,0,4,11,2,602,36]))
 
 
 
